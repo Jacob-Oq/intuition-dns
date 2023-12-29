@@ -49,9 +49,35 @@ Right click on the page and create a New Host. For name, input mainframe. The IP
 ![DNS 9](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/67426372-f661-4a5a-8dab-b7bcb8918ff7)
 
 <br />
-<p>
-This next exercise will showcase the DNS cache. On the domain controller, I changed mainframe's record address to 8.8.8.8 (Google) and refreshed the DNS server. When pinging mainframe on the client, it will still ping the old IP address. When the command ipconfig /displaydns is run, it will reveal that the DNS cache still has the old IP. In order to update the cache, we need to clear it. The command ipconfig /flushdns will empty the cache so that when we ping mainframe again, the IP address will be updated to the new one on the client side. When pinging mainframe, the new IP address of the record will show.
+<p>On the domain controller change the mainframe's record address to 8.8.8.8 and refresh the DNS server.</p> 
+
+![DNS 7](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/031a673d-8e4e-426e-881c-512c470898cc)
+
+![DNS 12](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/35e38907-2b5f-41a9-874a-e74079af982b)
+
+![DNS 13](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/7eacbb5e-40c1-4fa8-b95f-209f7e17b977)
+
+![DNS 14-1](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/0d555000-b820-43ba-9045-7ebfcf0d47f7)
+
+<p>Then ping "mainframe" on the client, it will still ping the old IP address.</p>
+
+![DNS 15](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/8d3bbebc-a70b-4d19-98fb-1a38ee33719b)
+
+<p>When the command ipconfig /displaydns is run, it will reveal that the DNS cache still has the old IP.</p>
+
+![DNS 16](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/b3f0c9d6-3450-4779-92c0-87bf2daaee76)
+
+In order to update the cache, we need to clear it. The command ipconfig /flushdns will empty the cache so that when we ping mainframe again, the IP address will be updated to the new one on the client side. When pinging mainframe, the new IP address of the record should show.
 </p>
+
+![DNS 18](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/552816b7-a8e6-44c9-96c9-6d27dce29ec5)
+
+![DNS 19](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/e5286f97-5348-4786-85fc-8f261fedda4d)
+
+![DNS 20](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/4cdc647e-d36b-40aa-98b0-6b5eff962840)
+
+![DNS 21](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/6ee65708-c297-457c-99bd-04e90d7220d1)
+
 <br />
 <p>
 A CNAME record will now be made on the DNS server that will point "search" to Google. On the Forward Lookup Zones tab in the DNS Manager, open the tab that has the domain. Create a new CNAME record called search and point it to Google. Refresh the server to save the changes. On the client, pinging search and using nslookup will return the results of the CNAME record.
