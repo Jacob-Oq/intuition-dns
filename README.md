@@ -80,10 +80,21 @@ In order to update the cache, we need to clear it. The command ipconfig /flushdn
 
 <br />
 <p>
-A CNAME record will now be made on the DNS server that will point "search" to Google. On the Forward Lookup Zones tab in the DNS Manager, open the tab that has the domain. Create a new CNAME record called search and point it to Google. Refresh the server to save the changes. On the client, pinging search and using nslookup will return the results of the CNAME record.
+Next we'll make a CNAME record on the DNS server that will point "search" to Google. On the Forward Lookup Zones tab in the DNS Manager, open the tab that has the domain. Create a new CNAME record called search and point it to Google. Refresh the server to save the changes. 
 </p>
+
+![DNS 23](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/f83c486f-5f44-4fd9-9aaa-a97071d28904)
+
+![DNS 24](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/0d3fb71d-3530-4ae6-915c-e5d3fe519001)
+
+<p>On the client, ping search and use nslookup to show the results of the CNAME record.</p>
+
+![DNS 25](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/3d898c71-0c62-4548-a22a-33f880e910cf)
+
+![DNS 26](https://github.com/Jacob-Oq/intuition-dns/assets/150084528/508d0cbb-d167-4168-a169-e66e6c602a02)
+
 <br />
 
-<h2>Lessons Learned </h2>
+<h2>Final Thoughts</h2>
 
-This lab made me understand how DNS directly works on a computer and the network. DNS records can change and sometimes this can cause connectivity issues. The DNS cache may have the old records and needs to be cleared out to update to the new records. The ipconfig /flushdns command is a common troubleshooting tool that has been referenced a lot in IT programs and I did not get a complete understanding how and why this works until I have done this lab. In the context of pinging "mainframe" at the start of the lab, the DNS cache gets checked first. If there is no result, the host file will be checked. The DNS server will be checked if there are no results in the host file. I made a record on the DNS server so a ping to mainframe can resolve. A CNAME record maps an alias name to another domain name. In this case, "search" was another name for Google.
+This lab helped me understand how DNS directly works on a computer and the network. DNS records can change and sometimes this can cause connectivity issues. The DNS cache may have the old records and needs to be cleared out to update to the new records. The ipconfig /flushdns command is a common troubleshooting tool that has been referenced a lot in IT programs and it may be dificault to get a complete understanding how and why this works until doing this lab. In the context of pinging "mainframe" at the start of the lab, the DNS cache gets checked first. If there is no result, the host file will be checked. The DNS server will be checked if there are no results in the host file. Making a record on the DNS server will allow a "ping" to "mainframe" to resolve. A CNAME record maps an alias name to another domain name. In this case, "search" was another name for Google.
